@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>COPY</title>
+        <link href="style.css" rel="stylesheet" />
+        <style>
+            .flex-container {
+                display: flex; /* Utilise flexbox */
+                gap: 20px;
+            }
+
+            .flex-container h2 {
+                flex: 1; /* Partage l'espace disponible de manière égale */
+            }
+            .column {
+                flex: 1; /* Chaque colonne prendra une part égale de l'espace disponible */
+                list-style-type: none; /* Supprime les puces des listes */
+                padding: 0; /* Supprime le padding par défaut */
+            }
+            li:nth-child(even) {
+                margin-bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-container">
+            <h2>Frontend</h2>
+            <h2>Backend</h2>
+        </div>
+        <div class="flex-container">
+            <ul class="column">
+                <li>HTML5</li>
+                <p style="--progresstool-width: 80%;" data-value="80"></p>
+                <progress max="100" value="80"></progress>
+
+                <li>CSS3</li>
+                <p style="--progresstool-width: 60%;" data-value="60"></p>
+                <progress max="100" value="60"></progress>
+
+                <li>jQuery</li>
+                <p style="--progresstool-width: 50%;" data-value="50"></p>
+                <progress max="100" value="50"></progress>
+            </ul>
+            <ul class="column">
+                <li>Python</li>
+                <p style="--progresstool-width: 75%;" data-value="75"></p>
+                <progress max="100" value="75"></progress>
+
+                <li>PHP</li>
+                <p style="--progresstool-width: 65%;" data-value="65"></p>
+                <progress max="100" value="65"></progress>
+
+                <li>Node.js</li>
+                <p style="--progresstool-width: 35%;" data-value="35"></p>
+                <progress max="100" value="35"></progress>
+            </ul>
+        </div>
+    </body>
+</html>
