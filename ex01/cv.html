@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+
+        article {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border: solid #000; /* Bordures des tableaux visibles */
+        }
+
+        th, td {
+            border: solid #000; /* Bordures des cellules visibles */
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        ul, ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        table tr:nth-last-child(1) td:nth-last-child(2){
+            border-right: solid #e71818;
+        }
+
+        table tr:nth-last-child(2) td:nth-last-child(1){
+            border-bottom: solid #e71818;
+        }
+        
+        table tr:last-child td:last-child {
+            border: solid #e71818;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>XXX xxx</h1>
+        <p>Développeur Web</p>
+    </header>
+    <section>
+        <h2>Compétences</h2>
+        <table style="border-collapse: collapse;">
+            <tr>
+                <th>Compétence</th>
+                <th>Niveau</th>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td>Avancé</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>Avancé</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>Intermédiaire</td>
+            </tr>
+            <tr>
+                <td>PHP</td>
+                <td>Débutant</td>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <h2>Parcours</h2>
+        <article>
+            <h3>Poste 1</h3>
+            <p>Description du poste 1.</p>
+            <ul>
+                <li>Tâche 1</li>
+                <li>Tâche 2</li>
+                <li>Tâche 3</li>
+            </ul>
+        </article>
+        <article>
+            <h3>Poste 2</h3>
+            <p>Description du poste 2.</p>
+            <ol>
+                <li>Accomplissement 1</li>
+                <li>Accomplissement 2</li>
+                <li>Accomplissement 3</li>
+            </ol>
+        </article>
+    </section>
+</body>
+</html>
