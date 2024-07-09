@@ -17,6 +17,7 @@ try {
 	$trBis = new Elem('tr');
 	$trBis->pushElement(new Elem('td', 'Value 1'));
 	$trBis->pushElement(new Elem('td', 'Value 2'));
+	$trBis->pushElement(new Elem('ttttttd', 'Value 2'));
 	$table->pushElement($trBis);
 	$body->pushElement($table);
 	$elem->pushElement($body);
@@ -27,7 +28,7 @@ try {
 
 	
 } catch (Exception $e) {
-    echo 'Exceptio : ',  $e->getMessage(), "\n";
+    echo 'Exception : ',  $e->getMessage(), "\n";
 }
 
 try {
@@ -42,7 +43,7 @@ try {
 
 	
 } catch (Exception $e) {
-    echo 'Exceptio : ',  $e->getMessage(), "\n";
+    echo 'Exception : ',  $e->getMessage(), "\n";
 }
 
 ?>

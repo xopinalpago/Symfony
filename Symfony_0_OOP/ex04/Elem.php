@@ -1,8 +1,9 @@
 <?php
+require_once 'MyException.php';
 class Elem {
 	private string $element;
 	private string $content;
-    private $attributes = array();
+    private array $attributes = [];
 
     private static $tags = ['meta', 'img', 'hr', 'br', 'html',
                             'head', 'body', 'title', 'h1', 'h2',
@@ -13,17 +14,13 @@ class Elem {
 
     public function __construct(string $element, string $content = '', $attributes = []) {
         if (!in_array($element, self::$tags)) {
-            throw new Exception("Unsupported HTML tag: $element");
+            throw new MyException("Cannot add child elements to this type of HTML tag: {$element}");
         }
         $this->element = $element;
         $this->content = $content;
         $this->attributes = $attributes;
     }
     
-    public function MyException(Elem $elem) {
-        throw new Exception("Cannot add child elements to this type of HTML tag: {$this->element}");
-    }
-
     public function pushElement(Elem $element): void {
         $this->content .= $element->getHTML();
     }
