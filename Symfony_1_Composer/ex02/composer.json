@@ -1,0 +1,19 @@
+{
+    "name": "rmeriau/ex02",
+    "autoload": {
+        "psr-4": {
+            "Rmeriau\\Ex02\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "rmeriau",
+            "email": "remy.meriau@hotmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "phpspec/prophecy": "^1.12.1",
+        "phpunit/php-code-coverage": "^9.2.13"
+    }
+}
