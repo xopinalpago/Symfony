@@ -1,0 +1,9 @@
+twig:
+    file_name_pattern: '*.twig'
+    paths:
+        '%kernel.project_dir%/src/E01Bundle/Ressources/views': E01
+        '%kernel.project_dir%/src/E02Bundle/Ressources/views': E02
+
+when@test:
+    twig:
+        strict_variables: true

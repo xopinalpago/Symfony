@@ -1,0 +1,9 @@
+{% extends '@E02/base.html.twig' %}
+
+{% block title %}Form Submission Success{% endblock %}
+
+{% block content %}
+    <h1>Form Submitted Successfully</h1>
+    <p><strong>Message:</strong> {{ data.message }}</p>
+    <p><strong>Include Timestamp:</strong> {{ data.include_timestamp }}</p>
+{% endblock %}

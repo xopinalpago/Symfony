@@ -1,0 +1,12 @@
+{% extends '@E02/base.html.twig' %}
+
+{% block title %}Message Form{% endblock %}
+
+{% block content %}
+    <h1>Message Form</h1>
+    {{ form_start(form) }}
+        {{ form_row(form.message) }}
+        {{ form_row(form.include_timestamp) }}
+        <button class="btn btn-primary">Submit</button>
+    {{ form_end(form) }}
+{% endblock %}
