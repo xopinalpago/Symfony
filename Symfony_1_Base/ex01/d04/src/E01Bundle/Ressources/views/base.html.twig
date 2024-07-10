@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Titre par défaut{% endblock %}</title>
+    {# Ajoutez ici vos balises <link>, <style>, ou <script> communs à toutes les pages #}
+</head>
+<body>
+    <header>
+        {% block header %}
+        <nav>
+            <ul>
+                <li><a href="/e01">Articles</a></li>
+            </ul>
+        </nav>
+        {% endblock %}
+    </header>
+
+    <main>
+        {% block content %}
+        {{ content|raw }}
+        {% endblock %}
+    </main>
+
+    <footer>
+        {% block footer %}
+        <p>&copy; 2024 Mon Site Web. Tous droits réservés.</p>
+        {% endblock %}
+    </footer>
+</body>
+</html>

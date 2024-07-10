@@ -1,0 +1,18 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+e00_firstpage:
+    path: /e00/firstpage
+    controller: App\E00Bundle\Controller\E00Controller::firstPage
+    
+e01:
+    path: /e01
+    controller: App\E01Bundle\Controller\E01Controller::articles
+
+article_show:
+    path: /e01/{slug}
+    controller: App\E01Bundle\Controller\E01Controller::showArticle
+
