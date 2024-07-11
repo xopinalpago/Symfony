@@ -1,12 +1,20 @@
+{# src/E02Bundle/Resources/views/form/message_form.html.twig #}
+
 {% extends '@E02/base.html.twig' %}
 
 {% block title %}Message Form{% endblock %}
 
 {% block content %}
     <h1>Message Form</h1>
-    {{ form_start(form) }}
+    
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
         {{ form_row(form.message) }}
         {{ form_row(form.include_timestamp) }}
         <button class="btn btn-primary">Submit</button>
     {{ form_end(form) }}
+
+    {% if last_line %}
+        <h2>Dernière ligne enregistrée :</h2>
+        <p>{{ last_line }}</p>
+    {% endif %}
 {% endblock %}

@@ -7,6 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class MessageFormType extends AbstractType
 {
@@ -15,6 +16,11 @@ class MessageFormType extends AbstractType
         $builder
             ->add('message', TextareaType::class, [
                 'label' => 'Message',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Le message ne peut pas être vide.',
+                    ]),
+                ],
             ])
             ->add('include_timestamp', ChoiceType::class, [
                 'label' => 'Include timestamp',
@@ -28,7 +34,8 @@ class MessageFormType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            // Configure your form options here
+            'data_class' => null, // Permet d'utiliser des données non liées à une classe
+            'defaultData' => [], // Ajout d'un paramètre pour les données par défaut
         ]);
     }
 }

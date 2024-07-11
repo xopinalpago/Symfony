@@ -19,3 +19,7 @@ article_show:
 e02:
     path: /e02
     controller: App\E02Bundle\Controller\E02Controller::messageForm
+
+e02_message_form_success:
+    path: /e02/success
+    controller: App\E02Bundle\Controller\E02Controller::success

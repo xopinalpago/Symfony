@@ -1,9 +1,9 @@
 {% extends '@E02/base.html.twig' %}
 
-{% block title %}Form Submission Success{% endblock %}
+{% block title %}Form Submitted{% endblock %}
 
 {% block content %}
     <h1>Form Submitted Successfully</h1>
-    <p><strong>Message:</strong> {{ data.message }}</p>
-    <p><strong>Include Timestamp:</strong> {{ data.include_timestamp }}</p>
+    <p>Your message has been saved.</p>
+    <a href="{{ path('e02') }}" class="btn btn-primary">Back to Form</a>
 {% endblock %}
