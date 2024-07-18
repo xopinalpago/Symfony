@@ -1,0 +1,17 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+create_table:
+    path: /create-table
+    controller: App\ex02\Controller\ex02::createTable
+
+ex02_show_form:
+    path: /ex02/form
+    controller: App\ex02\Controller\ex02::showForm
+
+ex02_show_users:
+    path: /ex02/users
+    controller: App\ex02\Controller\ex02::showUsers

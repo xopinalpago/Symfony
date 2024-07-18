@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Titre par défaut{% endblock %}</title>
+    {# Ajoutez ici vos balises <link>, <style>, ou <script> communs à toutes les pages #}
+</head>
+<body>
+    <main>
+        {% block content %}
+        {{ content|raw }}
+        {% endblock %}
+    </main>
+</body>
+</html>
