@@ -1,0 +1,9 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+create_table:
+    path: /create-table
+    controller: App\ex00\Controller\ex00::createTable
