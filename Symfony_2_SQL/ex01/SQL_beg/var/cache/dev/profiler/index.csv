@@ -1,0 +1,11 @@
+6d504d,127.0.0.1,GET,http://127.0.0.1:8000/create-table,1721310133,28bc40,500,request
+28bc40,127.0.0.1,GET,http://127.0.0.1:8000/create-table,1721310133,,500,request
+73e552,127.0.0.1,GET,http://127.0.0.1:8000/create-table,1721310153,,200,request
+ebbe85,127.0.0.1,GET,http://127.0.0.1:8000/create-table,1721311333,ff65dc,500,request
+ff65dc,127.0.0.1,GET,http://127.0.0.1:8000/create-table,1721311333,,500,request
+804eb5,127.0.0.1,GET,http://127.0.0.1:8000/create-table,1721311366,cf5613,500,request
+cf5613,127.0.0.1,GET,http://127.0.0.1:8000/create-table,1721311366,,500,request
+4e0119,127.0.0.1,GET,http://127.0.0.1:8000/create-table,1721311411,534906,500,request
+534906,127.0.0.1,GET,http://127.0.0.1:8000/create-table,1721311411,,500,request
+7fbf5a,127.0.0.1,GET,http://127.0.0.1:8000/create-table,1721311422,,200,request
+89cd9d,127.0.0.1,GET,http://127.0.0.1:8000/create-table,1721311713,,200,request
