@@ -83,6 +83,11 @@
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
+    <parameter key="host">%env(DATABASE_HOST)%</parameter>
+    <parameter key="port">%env(DATABASE_PORT)%</parameter>
+    <parameter key="dbname">%env(DATABASE_NAME)%</parameter>
+    <parameter key="user">%env(DATABASE_USER)%</parameter>
+    <parameter key="password">%env(DATABASE_PASSWORD)%</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -358,8 +363,13 @@
     <service id="App\ex00\Controller\ex00" class="App\ex00\Controller\ex00" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument>%env(DATABASE_HOST)%</argument>
+      <argument>%env(DATABASE_PORT)%</argument>
+      <argument>%env(DATABASE_NAME)%</argument>
+      <argument>%env(DATABASE_USER)%</argument>
+      <argument>%env(DATABASE_PASSWORD)%</argument>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.XyaHSri.App\ex00\Controller\ex00"/>
+        <argument type="service" id=".service_locator.QaaoWjx.App\ex00\Controller\ex00"/>
       </call>
     </service>
     <service id="App\ex00\ex00" class="App\ex00\ex00" public="true" autowire="true" autoconfigure="true">
@@ -392,7 +402,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.RnHBQg3"/>
+      <argument type="service" id=".service_locator.bjTZGdX"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3289,7 +3299,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.RnHBQg3"/>
+      <argument type="service" id=".service_locator.bjTZGdX"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -3389,7 +3399,7 @@
     <service id="router.default" class="Symfony\Bundle\FrameworkBundle\Routing\Router">
       <tag name="monolog.logger" channel="router"/>
       <tag name="container.service_subscriber" id="routing.loader"/>
-      <argument type="service" id=".service_locator.SmDefwA.router.default"/>
+      <argument type="service" id=".service_locator.zAVTS8N.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
         <argument key="cache_dir">/home/rmeriau/Symfony/Symfony_2_SQL/ex00/SQL_beg/var/cache/dev</argument>
@@ -7567,18 +7577,6 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.4wc4Ag1" method="withContext"/>
     </service>
-    <service id=".service_locator.ertAJK0" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="connection" type="service_closure" id="doctrine.dbal.default_connection"/>
-      </argument>
-    </service>
-    <service id=".service_locator.ertAJK0.App\ex00\Controller\ex00::createTable()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\ex00\Controller\ex00::createTable()"/>
-      <argument>App\ex00\Controller\ex00::createTable()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.ertAJK0" method="withContext"/>
-    </service>
     <service id=".service_locator.NwmT2jN" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7603,19 +7601,17 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.JxCcp1M" method="withContext"/>
     </service>
-    <service id=".service_locator.RnHBQg3" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.bjTZGdX" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
-        <argument key="App\ex00\Controller\ex00::createTable" type="service_closure" id=".service_locator.ertAJK0.App\ex00\Controller\ex00::createTable()"/>
         <argument key="App\ex00\ex00::build" type="service_closure" id=".service_locator.NwmT2jN.App\ex00\ex00::build()"/>
         <argument key="App\ex00\ex00::registerCommands" type="service_closure" id=".service_locator.JxCcp1M.App\ex00\ex00::registerCommands()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
-        <argument key="App\ex00\Controller\ex00:createTable" type="service_closure" id=".service_locator.ertAJK0.App\ex00\Controller\ex00::createTable()"/>
         <argument key="App\ex00\ex00:build" type="service_closure" id=".service_locator.NwmT2jN.App\ex00\ex00::build()"/>
         <argument key="App\ex00\ex00:registerCommands" type="service_closure" id=".service_locator.JxCcp1M.App\ex00\ex00::registerCommands()"/>
       </argument>
@@ -8128,7 +8124,7 @@
         <argument key="translation.loader.json" type="service_closure" id="translation.loader.json"/>
       </argument>
     </service>
-    <service id=".service_locator.XyaHSri" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.QaaoWjx" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="router" type="service_closure" id="router.default" on-invalid="ignore"/>
@@ -8144,11 +8140,11 @@
         <argument key="web_link.http_header_serializer" type="service_closure" id="web_link.http_header_serializer" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id=".service_locator.XyaHSri.App\ex00\Controller\ex00" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.QaaoWjx.App\ex00\Controller\ex00" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\ex00\Controller\ex00"/>
       <argument>App\ex00\Controller\ex00</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.XyaHSri" method="withContext"/>
+      <factory service=".service_locator.QaaoWjx" method="withContext"/>
     </service>
     <service id=".service_locator.DMfgFyO" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -8162,17 +8158,17 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.DMfgFyO" method="withContext"/>
     </service>
-    <service id=".service_locator.SmDefwA" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.zAVTS8N" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="routing.loader" type="service_closure" id="routing.loader"/>
       </argument>
     </service>
-    <service id=".service_locator.SmDefwA.router.default" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.zAVTS8N.router.default" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="router.default"/>
       <argument>router.default</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.SmDefwA" method="withContext"/>
+      <factory service=".service_locator.zAVTS8N" method="withContext"/>
     </service>
     <service id=".service_locator.YAcX0.U" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -9698,7 +9694,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.RnHBQg3"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.bjTZGdX"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9743,6 +9739,6 @@
     <service id=".service_locator.diNoEIK" alias=".service_locator.4wc4Ag1"/>
     <service id=".service_locator.yNtF4N1" alias=".service_locator.NwmT2jN"/>
     <service id=".service_locator.ZZaxX.N" alias=".service_locator.JxCcp1M"/>
-    <service id=".service_locator.LI5twd9" alias=".service_locator.XyaHSri"/>
+    <service id=".service_locator.b491maD" alias=".service_locator.QaaoWjx"/>
   </services>
 </container>
